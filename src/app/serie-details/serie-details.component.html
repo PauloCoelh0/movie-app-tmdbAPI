@@ -1,0 +1,63 @@
+<div class="movie_card" id="bright">
+  <div
+    class="details-bg"
+    *ngIf="serieId.poster_path"
+    [style.backgroundImage]="
+      'url(https://image.tmdb.org/t/p/w500' + serieId.backdrop_path + ')'
+    "
+  >
+    <div class="info_section">
+      <div class="movie_header">
+        <img
+          class="locandina"
+          src="https://image.tmdb.org/t/p/w500{{ serieId.poster_path }}"
+        />
+        <h1>
+          {{ serieId.name }}
+          <span style="font-weight: lighter">
+            ({{ serieId.first_air_date | dateFormat: "YYYY" }})</span
+          ><span class="score" style="margin-left: 1%"
+            ><i class="material-icons" style="color: gold">star</i>
+            {{ serieId.vote_average }}</span
+          >
+          <a class="play-video" (click)="openDialog()">
+            <mat-icon aria-hidden="false" aria-label="Star"
+              >play_arrow</mat-icon
+            >
+            Play Trailer
+          </a>
+        </h1>
+        <span class="minutes">{{ serieId.episode_run_time }} min</span>
+        <p class="type" *ngFor="let genre of serieId.genres">
+          {{ genre.name }}
+        </p>
+      </div>
+      <div class="movie_cast">
+        <h4 style="color: white; font-weight: 450; line-height: 10px">
+          Cast Stars
+        </h4>
+        <div class="cast">
+          <p *ngFor="let cast of fourCast()">
+            {{ cast.name }}
+            <span style="color: #c2dfff">&nbsp;({{ cast.character }})</span>
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="movie_desc">
+        <h3 style="color: white; font-weight: 450; line-height: 5px">
+          Synopsis
+        </h3>
+        <span class="text">{{ serieId.overview }}</span>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blur_back bright_back"></div>
+  </div>
+  <br />
+</div>
+<br />

@@ -1,0 +1,156 @@
+body{
+    display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgb(11, 36, 57);
+  color: rgb(0, 0, 0);
+  font-display: auto;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth !important;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-app-region: no-drag;
+  overflow-x: hidden
+}
+
+  
+
+::-webkit-scrollbar{
+  display: none
+
+}
+
+  
+router-outlet ~ *{
+  position: absolute;
+  height: 100%;
+  width: 100%
+}
+  
+
+.content{
+  display: flex;
+  margin: 32px auto;
+  padding: 0 16px;
+  max-width: 2500px;
+  flex-direction: column;
+  align-items: center
+}
+  
+
+  sup{
+    font-size: 0.5rem;
+  }
+    
+
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin-top: 16px
+}
+  
+
+a{
+  color: #460039;
+  text-decoration:none; 
+  
+  &:visited{
+    color: #460039;
+    text-decoration: none;
+  } 
+
+  &:visited{
+    color: #460039;
+    text-decoration: none
+  }
+    
+
+  &:hover{
+    color: #1976d2;
+    text-decoration: none;
+    color: #004c98
+  }
+}
+  
+
+.icon-outline{
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  color: #ffffff;
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+
+  &:hover{
+  color: #321414;
+  background-color: #ffffff;
+  border-color: rgba(100%, 100%, 100%, 0.2);
+  cursor: pointer
+  }
+  
+}
+  
+
+
+footer{
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px
+}
+  
+
+
+.fade-in{
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  // Firefox
+  -webkit-animation: fadein 2s;
+  //@debug Safari and Chrome
+  -o-animation: fadein 2s;
+// Opera
+}
+
+@keyframes fadein{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+  
+
+@-moz-keyframes fadein{
+// Firefox 
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+  
+
+@-webkit-keyframes fadein{
+// Safari and Chrome
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+  
+
+@-o-keyframes fadein{
+  // Opera
+    from{opacity: 0;}
+    to{opacity: 1;}
+  }
+

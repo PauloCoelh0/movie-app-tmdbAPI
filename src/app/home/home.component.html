@@ -1,0 +1,99 @@
+<br /><br /><br />
+<h1
+  style="
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    text-align: center;
+    font-size: 40px;
+  "
+>
+  <br />
+  MOVIES ON SHOW
+</h1>
+<br />
+
+<div class="container">
+  <div *ngFor="let movie of nowPlaying" class="card" style="width: 18rem">
+    <a routerLink="/movie-details/{{ movie.id }}">
+      <div class="img1">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+          class="movie-poster"
+          alt="{{ movie.title }}"
+        />
+      </div>
+      <div class="title">{{ movie.title }}</div>
+      <div class="text" style="height: 118px; overflow: hidden">
+        {{ movie.overview }}
+      </div>
+      <a href="#"
+        ><div class="catagory">
+          <span
+            >Score: {{ movie.vote_average
+            }}<i class="material-icons" style="color: gold">star</i></span
+          ><i class="fas fa-film"></i></div
+      ></a>
+      <a href="#"
+        ><div class="views">
+          {{ movie.release_date | dateFormat: "YYYY"
+          }}<i class="far fa-eye"></i></div
+      ></a>
+    </a>
+  </div>
+</div>
+
+<br /><br /><br /><br />
+
+<h1
+  style="
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    text-align: center;
+    font-size: 40px;
+  "
+>
+  <br />
+  SERIES ON AIR
+</h1>
+<br />
+
+<div class="container">
+  <div *ngFor="let serie of onAir" class="card" style="width: 18rem">
+    <a routerLink="/serie-details/{{ serie.id }}">
+      <div class="img1">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ serie.poster_path }}"
+          class="movie-poster"
+          alt="{{ serie.name }}"
+        />
+      </div>
+      <div class="title">{{ serie.name }}</div>
+      <div class="text" style="height: 118px; overflow: hidden">
+        {{ serie.overview }}
+      </div>
+      <a href="#"
+        ><div class="catagory">
+          <span
+            >Score: {{ serie.vote_average
+            }}<i class="material-icons" style="color: gold">star</i></span
+          ><i class="fas fa-film"></i></div
+      ></a>
+      <a href="#"
+        ><div class="views">
+          {{ serie.release_date | dateFormat: "YYYY"
+          }}<i class="far fa-eye"></i></div
+      ></a>
+    </a>
+  </div>
+</div>
+<br />
+<footer class="footer">
+  <div class="container text-center">
+    <p class="text-center text-muted">
+      Paulo Coelho • Tiago Oliveira • Bruno Duarte
+    </p>
+  </div>
+</footer>
+<br />
